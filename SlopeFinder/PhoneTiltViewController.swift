@@ -30,6 +30,7 @@ class PhoneTiltViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+        //clean up
         motionKit.stopDeviceMotionUpdates()
     }
     

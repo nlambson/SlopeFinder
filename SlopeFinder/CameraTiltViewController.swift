@@ -49,6 +49,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
             }
         }
         
+        //Settings for custom slider
         slopeSlider.dataSource = self
         slopeSlider.setValue(0, animated: false)
         slopeSlider.popUpViewCornerRadius = 12.0
@@ -87,6 +88,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
         captureSession = AVCaptureSession()
     }
     
+    // MARK: AVCapture and preview
     func beginSession() {
        
         do {
