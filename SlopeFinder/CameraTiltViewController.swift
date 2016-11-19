@@ -81,7 +81,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
     
     func slider(slider: ASValueTrackingSlider!, stringForValue value: Float) -> String! {
         currentAngle = CGFloat(value)
-        return String(format: "%.1f°", abs(value))
+        return String(format: "%.1f°", value)
     }
     
     func beginSession() {

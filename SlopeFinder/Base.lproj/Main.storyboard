@@ -80,7 +80,7 @@
                             <constraint firstItem="zzS-nt-vw4" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="wg1-BM-ynI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Phone" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Phone" image="appleLogo" selectedImage="appleLogo" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="slopeInDegreesLabel" destination="Ldb-iN-suc" id="nnV-uK-w8R"/>
                     </connections>
@@ -124,7 +124,7 @@
                             <constraint firstItem="4VV-DF-6XK" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="cvB-IZ-shz"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Camera" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="cameraLogo" selectedImage="cameraLogo" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="horizontalLineView" destination="4VV-DF-6XK" id="iSu-Y3-frM"/>
                         <outlet property="slopeView" destination="QS5-Rx-YEW" id="3yf-FM-bcX"/>
@@ -156,9 +156,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="downArrow" width="313" height="313"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
-        <image name="upArrow" width="313" height="313"/>
+        <image name="appleLogo" width="25" height="25"/>
+        <image name="cameraLogo" width="25" height="25"/>
+        <image name="downArrow" width="76" height="76"/>
+        <image name="upArrow" width="76" height="76"/>
     </resources>
 </document>

@@ -13,14 +13,12 @@ class PhoneTiltViewController: UIViewController {
 
     let motionKit = MotionKit()
     @IBOutlet weak var slopeInDegreesLabel: UILabel!
-    var lastYaw: Double = 0.0
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        lastYaw = 0.0
         motionKit.getDeviceMotionObject(0.01) { (deviceMotion) in
-            self.deviceMoved()
+            self.slopeInDegreesLabel.text = String(format: "%.1f°", deviceMotion.attitude.pitch.radiansToDegrees.double)
         }
         
     }
@@ -31,31 +29,6 @@ class PhoneTiltViewController: UIViewController {
         motionKit.stopDeviceMotionUpdates()
     }
     
-    func deviceMoved() {
-        motionKit.getAttitudeAtCurrentInstant { (attitude) in
-            let quat: CMQuaternion = attitude.quaternion
-            let yaw: Double = asin(2 * (quat.x * quat.z - quat.w * quat.y))
-            
-            if self.lastYaw == 0 {
-                self.lastYaw = yaw
-            }
-            
-            // kalman filtering
-            let q: Double = 0.1 // process noise
-            let r: Double = 0.1 // sensor noise
-            var p: Double = 0.1 // estimated error
-            var k: Double = 0.5 // kalman filter gain
-            
-            var x: Double = self.lastYaw
-            p = p + q
-            k = p / (q + r)
-            x = x + k * (yaw - x)
-            p = (1 - k) * p
-            self.lastYaw = x
-        }
-        
-        slopeInDegreesLabel.text = String(format: "%.1f°", fabs(self.lastYaw))
-    }
 
 }
 
