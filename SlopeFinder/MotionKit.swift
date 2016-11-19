@@ -246,7 +246,7 @@ import CoreMotion
                     values!(x: valX, y: valY, z: valZ)
                 }
                 
-                let absoluteVal = sqrt(valX * valX + valY * valY + valZ * valZ)
+                _ = sqrt(valX * valX + valY * valY + valZ * valZ)
                 self.delegate?.getGravityAccelerationValFromDeviceMotion!(valX, y: valY, z: valZ)
             }
             
@@ -309,7 +309,7 @@ import CoreMotion
                     values!(x: valX, y: valY, z: valZ)
                 }
                 
-                let absoluteVal = sqrt(valX * valX + valY * valY + valZ * valZ)
+                _ = sqrt(valX * valX + valY * valY + valZ * valZ)
                 self.delegate?.getRotationRateFromDeviceMotion!(valX, y: valY, z: valZ)
             }
             
