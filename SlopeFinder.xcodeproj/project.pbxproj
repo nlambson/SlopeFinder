@@ -7,16 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9070B571DE040D7000B94D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9070B561DE040D7000B94D0 /* Assets.xcassets */; };
 		A945441B1DE00F00004B9038 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A94544181DE00F00004B9038 /* ASValuePopUpView.m */; };
 		A945441C1DE00F00004B9038 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A945441A1DE00F00004B9038 /* ASValueTrackingSlider.m */; };
 		A945441F1DE02299004B9038 /* DegreesRadiansExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A945441E1DE02299004B9038 /* DegreesRadiansExtensions.swift */; };
 		A951C3F41DDFBB05003D1982 /* MotionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951C3F31DDFBB05003D1982 /* MotionKit.swift */; };
-		A99A36A51DE038A00018C6A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99A36A41DE038A00018C6A2 /* Assets.xcassets */; };
 		A9B0DA681DDFB2A200740BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0DA671DDFB2A200740BC9 /* AppDelegate.swift */; };
 		A9B0DA6A1DDFB2A200740BC9 /* PhoneTiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0DA691DDFB2A200740BC9 /* PhoneTiltViewController.swift */; };
 		A9B0DA6C1DDFB2A200740BC9 /* CameraTiltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0DA6B1DDFB2A200740BC9 /* CameraTiltViewController.swift */; };
 		A9B0DA6F1DDFB2A200740BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B0DA6D1DDFB2A200740BC9 /* Main.storyboard */; };
-		A9B0DA741DDFB2A200740BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B0DA721DDFB2A200740BC9 /* LaunchScreen.storyboard */; };
 		A9B0DA7F1DDFB2A200740BC9 /* SlopeFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0DA7E1DDFB2A200740BC9 /* SlopeFinderTests.swift */; };
 		A9B0DA8A1DDFB2A200740BC9 /* SlopeFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0DA891DDFB2A200740BC9 /* SlopeFinderUITests.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A9070B561DE040D7000B94D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A94544161DE00EFF004B9038 /* SlopeFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SlopeFinder-Bridging-Header.h"; sourceTree = "<group>"; };
 		A94544171DE00F00004B9038 /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
 		A94544181DE00F00004B9038 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
@@ -46,13 +46,11 @@
 		A945441A1DE00F00004B9038 /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
 		A945441E1DE02299004B9038 /* DegreesRadiansExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesRadiansExtensions.swift; sourceTree = "<group>"; };
 		A951C3F31DDFBB05003D1982 /* MotionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionKit.swift; sourceTree = "<group>"; };
-		A99A36A41DE038A00018C6A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9B0DA641DDFB2A200740BC9 /* SlopeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlopeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B0DA671DDFB2A200740BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9B0DA691DDFB2A200740BC9 /* PhoneTiltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTiltViewController.swift; sourceTree = "<group>"; };
 		A9B0DA6B1DDFB2A200740BC9 /* CameraTiltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraTiltViewController.swift; sourceTree = "<group>"; };
 		A9B0DA6E1DDFB2A200740BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A9B0DA731DDFB2A200740BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9B0DA751DDFB2A200740BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9B0DA7A1DDFB2A200740BC9 /* SlopeFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlopeFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B0DA7E1DDFB2A200740BC9 /* SlopeFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlopeFinderTests.swift; sourceTree = "<group>"; };
@@ -135,8 +133,7 @@
 				A9B0DA691DDFB2A200740BC9 /* PhoneTiltViewController.swift */,
 				A9B0DA6B1DDFB2A200740BC9 /* CameraTiltViewController.swift */,
 				A9B0DA6D1DDFB2A200740BC9 /* Main.storyboard */,
-				A99A36A41DE038A00018C6A2 /* Assets.xcassets */,
-				A9B0DA721DDFB2A200740BC9 /* LaunchScreen.storyboard */,
+				A9070B561DE040D7000B94D0 /* Assets.xcassets */,
 				A9B0DA751DDFB2A200740BC9 /* Info.plist */,
 				A94544161DE00EFF004B9038 /* SlopeFinder-Bridging-Header.h */,
 				A945441E1DE02299004B9038 /* DegreesRadiansExtensions.swift */,
@@ -273,8 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9B0DA741DDFB2A200740BC9 /* LaunchScreen.storyboard in Resources */,
-				A99A36A51DE038A00018C6A2 /* Assets.xcassets in Resources */,
+				A9070B571DE040D7000B94D0 /* Assets.xcassets in Resources */,
 				A9B0DA6F1DDFB2A200740BC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,14 +344,6 @@
 				A9B0DA6E1DDFB2A200740BC9 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A9B0DA721DDFB2A200740BC9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A9B0DA731DDFB2A200740BC9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -458,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 429BU58AR4;
 				INFOPLIST_FILE = SlopeFinder/Info.plist;
@@ -475,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 429BU58AR4;
 				INFOPLIST_FILE = SlopeFinder/Info.plist;
