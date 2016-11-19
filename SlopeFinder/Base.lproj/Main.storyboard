@@ -35,21 +35,21 @@
                                     <constraint firstAttribute="width" constant="68" id="ZSP-ab-ZvU"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top of the hill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzS-nt-vw4">
-                                <rect key="frame" x="135" y="86" width="104" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top of the surface" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzS-nt-vw4">
+                                <rect key="frame" x="111" y="86" width="154" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="qSY-Vq-rJb"/>
-                                    <constraint firstAttribute="width" constant="104" id="xyM-yn-NXD"/>
+                                    <constraint firstAttribute="width" constant="154" id="DbK-fu-7bF"/>
+                                    <constraint firstAttribute="height" constant="28" id="l8L-wy-bFY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom of the hill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nc-Py-1tm">
-                                <rect key="frame" x="122" y="521" width="131" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom of the surface" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nc-Py-1tm">
+                                <rect key="frame" x="101" y="516" width="172" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="kTt-Qf-wyk"/>
-                                    <constraint firstAttribute="height" constant="21" id="oPg-94-YMd"/>
+                                    <constraint firstAttribute="width" constant="172" id="TzR-1o-dgC"/>
+                                    <constraint firstAttribute="height" constant="26" id="nbk-eo-bdI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
