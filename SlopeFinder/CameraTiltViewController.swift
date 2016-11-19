@@ -15,7 +15,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
 
     @IBOutlet var slopeView: UIView!
     @IBOutlet weak var horizontalLineView: UIView!
-    @IBOutlet weak var stressLevelSlider: ASValueTrackingSlider!
+    @IBOutlet weak var slopeSlider: ASValueTrackingSlider!
     
     let motionKit = MotionKit()
     var currentAngle: CGFloat = 0.0
@@ -43,13 +43,13 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
             }
         }
         
-        stressLevelSlider.dataSource = self
-        stressLevelSlider.setValue(0, animated: false)
-        stressLevelSlider.popUpViewCornerRadius = 12.0
-        stressLevelSlider.font = UIFont.init(name: "GillSans-Bold", size: 28)
-        stressLevelSlider.backgroundColor = UIColor.clearColor()
-        stressLevelSlider.minimumTrackTintColor = UIColor.whiteColor()
-        stressLevelSlider.maximumTrackTintColor = UIColor.whiteColor()
+        slopeSlider.dataSource = self
+        slopeSlider.setValue(0, animated: false)
+        slopeSlider.popUpViewCornerRadius = 12.0
+        slopeSlider.font = UIFont.init(name: "GillSans-Bold", size: 28)
+        slopeSlider.backgroundColor = UIColor.clearColor()
+        slopeSlider.minimumTrackTintColor = UIColor.whiteColor()
+        slopeSlider.maximumTrackTintColor = UIColor.whiteColor()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -68,7 +68,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
         }
         
         self.view.bringSubviewToFront(horizontalLineView)
-        self.view.bringSubviewToFront(stressLevelSlider)
+        self.view.bringSubviewToFront(slopeSlider)
     }
     
     override func viewWillDisappear(animated: Bool) {
