@@ -62,6 +62,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        currentAngle = 0.0
         if captureDevice != nil {
             beginSession()
         }
