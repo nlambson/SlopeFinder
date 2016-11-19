@@ -2,6 +2,10 @@
 //  FirstViewController.swift
 //  SlopeFinder
 //
+//  This class is used to determine the slope of an object by placing an iPhone
+//  parallel to the inclined object
+//
+//
 //  Created by Nathan Lambson on 11/18/16.
 //  Copyright © 2016 Nathan Lambson. All rights reserved.
 //

@@ -127,8 +127,8 @@
                     <tabBarItem key="tabBarItem" title="Camera" image="cameraLogo" selectedImage="cameraLogo" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="horizontalLineView" destination="4VV-DF-6XK" id="iSu-Y3-frM"/>
+                        <outlet property="slopeSlider" destination="QCd-ue-ORV" id="L2W-Uw-Q4p"/>
                         <outlet property="slopeView" destination="QS5-Rx-YEW" id="3yf-FM-bcX"/>
-                        <outlet property="stressLevelSlider" destination="QCd-ue-ORV" id="LeZ-78-fIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

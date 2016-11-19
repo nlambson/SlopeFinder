@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A945441B1DE00F00004B9038 /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = A94544181DE00F00004B9038 /* ASValuePopUpView.m */; };
 		A945441C1DE00F00004B9038 /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = A945441A1DE00F00004B9038 /* ASValueTrackingSlider.m */; };
-		A945441F1DE02299004B9038 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A945441E1DE02299004B9038 /* Extensions.swift */; };
+		A945441F1DE02299004B9038 /* DegreesRadiansExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A945441E1DE02299004B9038 /* DegreesRadiansExtensions.swift */; };
 		A951C3F41DDFBB05003D1982 /* MotionKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A951C3F31DDFBB05003D1982 /* MotionKit.swift */; };
 		A99A36A51DE038A00018C6A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A99A36A41DE038A00018C6A2 /* Assets.xcassets */; };
 		A9B0DA681DDFB2A200740BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B0DA671DDFB2A200740BC9 /* AppDelegate.swift */; };
@@ -44,7 +44,7 @@
 		A94544181DE00F00004B9038 /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
 		A94544191DE00F00004B9038 /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
 		A945441A1DE00F00004B9038 /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
-		A945441E1DE02299004B9038 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A945441E1DE02299004B9038 /* DegreesRadiansExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreesRadiansExtensions.swift; sourceTree = "<group>"; };
 		A951C3F31DDFBB05003D1982 /* MotionKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionKit.swift; sourceTree = "<group>"; };
 		A99A36A41DE038A00018C6A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9B0DA641DDFB2A200740BC9 /* SlopeFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlopeFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +98,14 @@
 			name = ASValueTrackingSlider;
 			sourceTree = "<group>";
 		};
+		A99A36A61DE03D100018C6A2 /* MotionKit */ = {
+			isa = PBXGroup;
+			children = (
+				A951C3F31DDFBB05003D1982 /* MotionKit.swift */,
+			);
+			name = MotionKit;
+			sourceTree = "<group>";
+		};
 		A9B0DA5B1DDFB2A200740BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -121,17 +129,17 @@
 		A9B0DA661DDFB2A200740BC9 /* SlopeFinder */ = {
 			isa = PBXGroup;
 			children = (
+				A99A36A61DE03D100018C6A2 /* MotionKit */,
 				A945441D1DE00F06004B9038 /* ASValueTrackingSlider */,
 				A9B0DA671DDFB2A200740BC9 /* AppDelegate.swift */,
 				A9B0DA691DDFB2A200740BC9 /* PhoneTiltViewController.swift */,
 				A9B0DA6B1DDFB2A200740BC9 /* CameraTiltViewController.swift */,
-				A951C3F31DDFBB05003D1982 /* MotionKit.swift */,
 				A9B0DA6D1DDFB2A200740BC9 /* Main.storyboard */,
 				A99A36A41DE038A00018C6A2 /* Assets.xcassets */,
 				A9B0DA721DDFB2A200740BC9 /* LaunchScreen.storyboard */,
 				A9B0DA751DDFB2A200740BC9 /* Info.plist */,
 				A94544161DE00EFF004B9038 /* SlopeFinder-Bridging-Header.h */,
-				A945441E1DE02299004B9038 /* Extensions.swift */,
+				A945441E1DE02299004B9038 /* DegreesRadiansExtensions.swift */,
 			);
 			path = SlopeFinder;
 			sourceTree = "<group>";
@@ -298,7 +306,7 @@
 				A9B0DA681DDFB2A200740BC9 /* AppDelegate.swift in Sources */,
 				A9B0DA6A1DDFB2A200740BC9 /* PhoneTiltViewController.swift in Sources */,
 				A945441C1DE00F00004B9038 /* ASValueTrackingSlider.m in Sources */,
-				A945441F1DE02299004B9038 /* Extensions.swift in Sources */,
+				A945441F1DE02299004B9038 /* DegreesRadiansExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

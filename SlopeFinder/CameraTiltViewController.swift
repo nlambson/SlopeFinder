@@ -2,6 +2,11 @@
 //  SecondViewController.swift
 //  SlopeFinder
 //
+//  This class is used for visually dtermining the slope of a distant incline
+//  The red line auto adjusts for camera shake or tilt, the slider is how to
+//  adjust the slope. Instead of forcing the camera to focus at 100 yards per
+//  the requirement, I implemented autofocus and tap to focus
+//
 //  Created by Nathan Lambson on 11/18/16.
 //  Copyright © 2016 Nathan Lambson. All rights reserved.
 //
@@ -21,11 +26,12 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
     var currentAngle: CGFloat = 0.0
     var captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
-    let tapRecognizer = UITapGestureRecognizer()
+    let tapRecognizer = UITapGestureRecognizer() //to focus camera
     
     // If we find a device we'll store it here for later use
     var captureDevice : AVCaptureDevice?
     
+    // MARK: ViewController Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,6 +73,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
             self.horizontalLineView.transform = CGAffineTransformMakeRotation(CGFloat(rotation + self.currentAngle.degreesToRadians.double))
         }
         
+        //Make sure your controls are visible after loading the camera preview
         self.view.bringSubviewToFront(horizontalLineView)
         self.view.bringSubviewToFront(slopeSlider)
     }
@@ -74,14 +81,10 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
+        // clean up
         motionKit.stopDeviceMotionUpdates()
         captureSession.stopRunning()
         captureSession = AVCaptureSession()
-    }
-    
-    func slider(slider: ASValueTrackingSlider!, stringForValue value: Float) -> String! {
-        currentAngle = CGFloat(value)
-        return String(format: "%.1f°", value)
     }
     
     func beginSession() {
@@ -105,6 +108,7 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
         }
     }
     
+    // MARK: focus camera methods - ignored 100 yard requirement for auto focus and tap to focus
     func tapped(sender: UITapGestureRecognizer) {
         if sender.state == .Ended {
             focusTo(sender.locationInView(self.view))
@@ -124,5 +128,11 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
                 print("💩 hit the fan trying to focus")
             }
         }
+    }
+    
+    // MARK: ASValueTracking methods
+    func slider(slider: ASValueTrackingSlider!, stringForValue value: Float) -> String! {
+        currentAngle = CGFloat(value)
+        return String(format: "%.1f°", value)
     }
 }
