@@ -51,7 +51,6 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
         
         //Settings for custom slider
         slopeSlider.dataSource = self
-        slopeSlider.setValue(0, animated: false)
         slopeSlider.popUpViewCornerRadius = 12.0
         slopeSlider.font = UIFont.init(name: "GillSans-Bold", size: 28)
         slopeSlider.backgroundColor = UIColor.clearColor()
@@ -63,6 +62,8 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
         super.viewWillAppear(animated)
         
         currentAngle = 0.0
+        slopeSlider.setValue(0, animated: false)
+        
         if captureDevice != nil {
             beginSession()
         }
