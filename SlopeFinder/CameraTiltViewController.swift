@@ -93,10 +93,8 @@ class CameraTiltViewController: UIViewController {
             self!.yawSlopeLabel.text = String(format: "%.1f°", abs(yawRotationDegrees))
             
             //pitch
-            var pitchDegrees = deviceMotion.attitude.pitch.radiansToDegrees.double - 90
-            if gravity.z < 0 {
-                pitchDegrees = -1 * pitchDegrees
-            }
+            let r = sqrt(gravity.x*gravity.x + gravity.y*gravity.y + gravity.z*gravity.z)
+            var pitchDegrees = acos(gravity.z/r) * 180.0 / M_PI - 90.0
             
             if (abs(pitchDegrees) > 90) {
                 let remainder = pitchDegrees % 90
