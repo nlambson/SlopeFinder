@@ -17,11 +17,12 @@ import AVFoundation
 
 
 class CameraTiltViewController: UIViewController {
-
-    @IBOutlet weak var yawSlider: ASValueTrackingSlider!
-    @IBOutlet weak var degreesLabel: UILabel!
     @IBOutlet var slopeView: UIView!
-    @IBOutlet weak var horizontalLineView: UIView!
+    
+    @IBOutlet weak var yawSlopeSlider: UISlider!
+    @IBOutlet weak var yawSlopeLabel: UILabel!
+    @IBOutlet weak var pitchSlopeSlider: UISlider!
+    @IBOutlet weak var pitchSlopeLabel: UILabel!
     
     let motionKit = MotionKit()
     var captureSession = AVCaptureSession()
@@ -34,6 +35,7 @@ class CameraTiltViewController: UIViewController {
     // MARK: ViewController Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         captureSession.sessionPreset = AVCaptureSessionPresetHigh
         let devices = AVCaptureDevice.devices()
@@ -49,9 +51,18 @@ class CameraTiltViewController: UIViewController {
             }
         }
         
-        yawSlider.backgroundColor = UIColor.clearColor()
-        yawSlider.minimumTrackTintColor = UIColor.whiteColor()
-        yawSlider.maximumTrackTintColor = UIColor.whiteColor()
+        yawSlopeSlider.backgroundColor = UIColor.clearColor()
+        yawSlopeSlider.minimumTrackTintColor = UIColor.redColor()
+        yawSlopeSlider.maximumTrackTintColor = UIColor.redColor()
+//        yawSlopeSlider.setThumbImage(UIImage(named: "verticalLine"), forState: .Normal)
+        
+        pitchSlopeSlider.backgroundColor = UIColor.clearColor()
+        pitchSlopeSlider.minimumTrackTintColor = UIColor.blackColor()
+        pitchSlopeSlider.maximumTrackTintColor = UIColor.blackColor()
+        
+        pitchSlopeSlider.transform = CGAffineTransformMakeRotation(CGFloat(M_PI_2));
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -64,24 +75,43 @@ class CameraTiltViewController: UIViewController {
         
         
         motionKit.getDeviceMotionObject(0.03) {[weak self] (deviceMotion) in
+            //yaw
             let gravity = deviceMotion.gravity
-            let rotation = atan2(gravity.x, gravity.y) - M_PI
-            var rotationInDegrees = abs(rotation.radiansToDegrees.double)
+            let yawRotation = atan2(gravity.x, gravity.y) - M_PI
+            var yawRotationDegrees = abs(yawRotation.radiansToDegrees.double)
             
-            if (rotationInDegrees >= 180) {
-                rotationInDegrees = rotationInDegrees - 360
+            if (yawRotationDegrees > 180) {
+                yawRotationDegrees = yawRotationDegrees - 360
             }
             
-            // for DEBUG
-            self!.yawSlider.setValue(Float(rotationInDegrees), animated: false)
+            if (abs(yawRotationDegrees) > 90) {
+                let remainder = yawRotationDegrees % 90
+                yawRotationDegrees -= remainder * 2
+            }
             
-            self!.degreesLabel.text = String(format: "%.1f°", abs(rotationInDegrees))
+            self!.yawSlopeSlider.setValue(Float(yawRotationDegrees), animated: false)
+            self!.yawSlopeLabel.text = String(format: "%.1f°", abs(yawRotationDegrees))
+            
+            //pitch
+            var pitchDegrees = deviceMotion.attitude.pitch.radiansToDegrees.double - 90
+            if gravity.z < 0 {
+                pitchDegrees = -1 * pitchDegrees
+            }
+            
+            if (abs(pitchDegrees) > 90) {
+                let remainder = pitchDegrees % 90
+                pitchDegrees -= remainder * 2
+            }
+            
+            self!.pitchSlopeSlider.setValue(Float(pitchDegrees), animated: false)
+            self!.pitchSlopeLabel.text = String(format: "%.1f°", abs(pitchDegrees))
         }
         
         //Make sure your controls are visible after loading the camera preview
-        self.view.bringSubviewToFront(horizontalLineView)
-        self.view.bringSubviewToFront(degreesLabel)
-        self.view.bringSubviewToFront(yawSlider)
+        self.view.bringSubviewToFront(yawSlopeLabel)
+        self.view.bringSubviewToFront(yawSlopeSlider)
+        self.view.bringSubviewToFront(pitchSlopeSlider)
+        self.view.bringSubviewToFront(pitchSlopeLabel)
     }
     
     override func viewWillDisappear(animated: Bool) {
