@@ -452,7 +452,7 @@
 				INFOPLIST_FILE = SlopeFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nlambson.SlopeFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nlambson.SlopeFinder2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlopeFinder/SlopeFinder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -470,7 +470,7 @@
 				INFOPLIST_FILE = SlopeFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nlambson.SlopeFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nlambson.SlopeFinder2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SlopeFinder/SlopeFinder-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;

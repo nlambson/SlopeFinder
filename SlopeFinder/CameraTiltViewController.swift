@@ -16,14 +16,14 @@ import CoreMotion
 import AVFoundation
 
 
-class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSource {
+class CameraTiltViewController: UIViewController {
 
+    @IBOutlet weak var yawSlider: ASValueTrackingSlider!
+    @IBOutlet weak var degreesLabel: UILabel!
     @IBOutlet var slopeView: UIView!
     @IBOutlet weak var horizontalLineView: UIView!
-    @IBOutlet weak var slopeSlider: ASValueTrackingSlider!
     
     let motionKit = MotionKit()
-    var currentAngle: CGFloat = 0.0
     var captureSession = AVCaptureSession()
     var previewLayer : AVCaptureVideoPreviewLayer?
     let tapRecognizer = UITapGestureRecognizer() //to focus camera
@@ -49,36 +49,39 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
             }
         }
         
-        //Settings for custom slider
-        slopeSlider.dataSource = self
-        slopeSlider.popUpViewCornerRadius = 12.0
-        slopeSlider.font = UIFont.init(name: "GillSans-Bold", size: 28)
-        slopeSlider.backgroundColor = UIColor.clearColor()
-        slopeSlider.minimumTrackTintColor = UIColor.whiteColor()
-        slopeSlider.maximumTrackTintColor = UIColor.whiteColor()
+        yawSlider.backgroundColor = UIColor.clearColor()
+        yawSlider.minimumTrackTintColor = UIColor.whiteColor()
+        yawSlider.maximumTrackTintColor = UIColor.whiteColor()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        currentAngle = 0.0
-        slopeSlider.setValue(0, animated: false)
-        
         if captureDevice != nil {
             beginSession()
         }
         
-        motionKit.getDeviceMotionObject(0.01) { (deviceMotion) in
+        
+        
+        motionKit.getDeviceMotionObject(0.03) {[weak self] (deviceMotion) in
             let gravity = deviceMotion.gravity
             let rotation = atan2(gravity.x, gravity.y) - M_PI
+            var rotationInDegrees = abs(rotation.radiansToDegrees.double)
+            
+            if (rotationInDegrees >= 180) {
+                rotationInDegrees = rotationInDegrees - 360
+            }
+            
             // for DEBUG
-            // print(rotation.radiansToDegrees)
-            self.horizontalLineView.transform = CGAffineTransformMakeRotation(CGFloat(rotation + self.currentAngle.degreesToRadians.double))
+            self!.yawSlider.setValue(Float(rotationInDegrees), animated: false)
+            
+            self!.degreesLabel.text = String(format: "%.1f°", abs(rotationInDegrees))
         }
         
         //Make sure your controls are visible after loading the camera preview
         self.view.bringSubviewToFront(horizontalLineView)
-        self.view.bringSubviewToFront(slopeSlider)
+        self.view.bringSubviewToFront(degreesLabel)
+        self.view.bringSubviewToFront(yawSlider)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -135,8 +138,8 @@ class CameraTiltViewController: UIViewController, ASValueTrackingSliderDataSourc
     }
     
     // MARK: ASValueTracking methods
-    func slider(slider: ASValueTrackingSlider!, stringForValue value: Float) -> String! {
-        currentAngle = CGFloat(value)
-        return String(format: "%.1f°", value)
-    }
+//    func slider(slider: ASValueTrackingSlider!, stringForValue value: Float) -> String! {
+//        currentAngle = CGFloat(value)
+//        return String(format: "%.1f°", value)
+//    }
 }

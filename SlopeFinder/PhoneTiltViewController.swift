@@ -21,8 +21,8 @@ class PhoneTiltViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        motionKit.getDeviceMotionObject(0.01) { (deviceMotion) in
-            self.slopeInDegreesLabel.text = String(format: "%.1f°", deviceMotion.attitude.pitch.radiansToDegrees.double)
+        motionKit.getDeviceMotionObject(0.03) { (deviceMotion) in
+            self.slopeInDegreesLabel.text = String(format: "%.1f°", abs(deviceMotion.attitude.pitch.radiansToDegrees.double))
         }
         
     }

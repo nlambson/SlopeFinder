@@ -109,34 +109,50 @@
                                     <constraint firstAttribute="height" constant="2" id="VSS-WP-aGG"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-90" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="QCd-ue-ORV" customClass="ASValueTrackingSlider">
-                                <rect key="frame" x="-2" y="393" width="324" height="31"/>
-                                <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="maximumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="thumbTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B10-nw-Imx">
+                                <rect key="frame" x="97" y="28" width="126" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nwH-el-bfk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-90" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="P3C-Gz-eaE" customClass="ASValueTrackingSlider">
+                                <rect key="frame" x="-2" y="70" width="324" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xn7-0X-2aM"/>
+                                </constraints>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="QCd-ue-ORV" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="5Ak-hE-ShC"/>
-                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="QCd-ue-ORV" secondAttribute="bottom" constant="8" id="DPw-xW-fif"/>
+                            <constraint firstAttribute="trailing" secondItem="P3C-Gz-eaE" secondAttribute="trailing" id="9eG-lu-E0Q"/>
                             <constraint firstItem="4VV-DF-6XK" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Da7-BE-WRj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B10-nw-Imx" secondAttribute="trailing" constant="81" id="FRv-7a-r9b"/>
+                            <constraint firstItem="P3C-Gz-eaE" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="IoA-PU-WwM"/>
+                            <constraint firstItem="B10-nw-Imx" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="81" id="KHx-AR-3e7"/>
+                            <constraint firstItem="P3C-Gz-eaE" firstAttribute="top" secondItem="B10-nw-Imx" secondAttribute="bottom" constant="2" id="SLt-If-EIS"/>
                             <constraint firstItem="4VV-DF-6XK" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="cvB-IZ-shz"/>
-                            <constraint firstItem="QCd-ue-ORV" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="nAm-b4-5hI"/>
-                            <constraint firstAttribute="trailing" secondItem="QCd-ue-ORV" secondAttribute="trailing" id="u3B-Ct-028"/>
+                            <constraint firstItem="B10-nw-Imx" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="r9M-El-0yu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Camera" image="cameraIcon" selectedImage="cameraIcon" id="cPa-gy-q4n"/>
                     <connections>
+                        <outlet property="degreesLabel" destination="B10-nw-Imx" id="0jE-Zu-L21"/>
                         <outlet property="horizontalLineView" destination="4VV-DF-6XK" id="iSu-Y3-frM"/>
-                        <outlet property="slopeSlider" destination="QCd-ue-ORV" id="L2W-Uw-Q4p"/>
                         <outlet property="slopeView" destination="QS5-Rx-YEW" id="3yf-FM-bcX"/>
+                        <outlet property="yawSlider" destination="P3C-Gz-eaE" id="ITW-7h-dgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
+            <point key="canvasLocation" x="748.125" y="358.75"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
