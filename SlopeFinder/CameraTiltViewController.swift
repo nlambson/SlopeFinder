@@ -77,20 +77,17 @@ class CameraTiltViewController: UIViewController {
         motionKit.getDeviceMotionObject(0.03) {[weak self] (deviceMotion) in
             //yaw
             let gravity = deviceMotion.gravity
-            let yawRotation = atan2(gravity.x, gravity.y) - M_PI
-            var yawRotationDegrees = abs(yawRotation.radiansToDegrees.double)
+            let quat = deviceMotion.attitude.quaternion
+            let yaw = asin(2*(quat.x*quat.z - quat.w*quat.y))
+            var yawDegrees = yaw.radiansToDegrees.double
             
-            if (yawRotationDegrees > 180) {
-                yawRotationDegrees = yawRotationDegrees - 360
+            if (abs(yawDegrees) > 90) {
+                let remainder = yawDegrees % 90
+                yawDegrees -= remainder * 2
             }
             
-            if (abs(yawRotationDegrees) > 90) {
-                let remainder = yawRotationDegrees % 90
-                yawRotationDegrees -= remainder * 2
-            }
-            
-            self!.yawSlopeSlider.setValue(Float(yawRotationDegrees), animated: false)
-            self!.yawSlopeLabel.text = String(format: "%.1f°", abs(yawRotationDegrees))
+            self!.yawSlopeSlider.setValue(Float(yawDegrees), animated: false)
+            self!.yawSlopeLabel.text = String(format: "%.1f°", abs(yawDegrees))
             
             //pitch
             let r = sqrt(gravity.x*gravity.x + gravity.y*gravity.y + gravity.z*gravity.z)
